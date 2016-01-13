@@ -54,10 +54,10 @@ target_link_libraries(Arcus PUBLIC
     ${PROTOBUF_LIBRARY}
 )
 
-if(WIN32)
-    add_definitions(-D_WIN32_WINNT=0x0600) # Declare we require Vista or higher, this allows us to use IPv6 functions.
-    target_link_libraries(Arcus PUBLIC Ws2_32)
-endif()
+# if(WIN32)
+#     add_definitions(-D_WIN32_WINNT=0x0600) # Declare we require Vista or higher, this allows us to use IPv6 functions.
+#     target_link_libraries(Arcus PUBLIC Ws2_32)
+# endif()
 
 set_target_properties(Arcus PROPERTIES
     FRAMEWORK FALSE
@@ -67,7 +67,9 @@ set_target_properties(Arcus PROPERTIES
     DEFINE_SYMBOL MAKE_ARCUS_LIB
 )
 
-#add_subdirectory(examples)
+if(BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()
 
 install(TARGETS Arcus
     EXPORT Arcus-targets
