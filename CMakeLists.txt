@@ -65,7 +65,7 @@ set_target_properties(Arcus PROPERTIES
     DEFINE_SYMBOL MAKE_ARCUS_LIB
 )
 
-add_subdirectory(examples)
+#add_subdirectory(examples)
 
 install(TARGETS Arcus
     EXPORT Arcus-targets
