@@ -5,7 +5,7 @@ include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 option(INSTALL_PYTHON_PACKAGE "Install the Python parts of Arcus" ON)
-option(BUILD_EXAMPLES "Build the example programs" ON)
+option(BUILD_EXAMPLES "Build the example programs" OFF)
 option(BUILD_STATIC "Build as a static library" OFF)
 
 set(REQUIRED_PROTOBUF_VERSION 3.0.0)
@@ -95,4 +95,3 @@ if(INSTALL_PYTHON_PACKAGE)
         install(FILES python/Arcus/__init__.py DESTINATION lib/python${PYTHON_VERSION_MAJOR}/dist-packages/Arcus)
     endif()
 endif()
-
