@@ -1,4 +1,4 @@
-set(CMAKE_LEGACY_CYGWIN_WIN32 0)
+set(CMAKE_LEGACY_CYGWIN_WIN32 1)
 
 project(arcus)
 cmake_minimum_required(VERSION 2.8.12)
@@ -54,10 +54,10 @@ target_link_libraries(Arcus PUBLIC
     ${PROTOBUF_LIBRARY}
 )
 
-if(WIN32)
-    add_definitions(-D_WIN32_WINNT=0x0600) # Declare we require Vista or higher, this allows us to use IPv6 functions.
-    target_link_libraries(Arcus PUBLIC Ws2_32)
-endif()
+# if(WIN32)
+#     add_definitions(-D_WIN32_WINNT=0x0600) # Declare we require Vista or higher, this allows us to use IPv6 functions.
+#     target_link_libraries(Arcus PUBLIC Ws2_32)
+# endif()
 
 set_target_properties(Arcus PROPERTIES
     FRAMEWORK FALSE
