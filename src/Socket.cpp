@@ -144,7 +144,7 @@ void Socket::close()
     }
 }
 
-void ARCUS_EXPORT Socket::sendMessage(MessagePtr message)
+void Socket::sendMessage(MessagePtr message)
 {
     if(!message)
         return;
