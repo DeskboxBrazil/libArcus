@@ -24,6 +24,8 @@
 
 using namespace Arcus;
 
+class ARCUS_EXPORT Socket;
+
 Socket::Socket() : d(new SocketPrivate)
 {
 }
@@ -148,7 +150,7 @@ void Socket::sendMessage(MessagePtr message)
 {
     if(!message)
         return;
-    
+
     std::lock_guard<std::mutex> lock(d->sendQueueMutex);
     d->sendQueue.push_back(message);
 }
