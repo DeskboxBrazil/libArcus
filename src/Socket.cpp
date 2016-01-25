@@ -24,8 +24,6 @@
 
 using namespace Arcus;
 
-class ARCUS_EXPORT Socket;
-
 Socket::Socket() : d(new SocketPrivate)
 {
 }
@@ -146,7 +144,7 @@ void Socket::close()
     }
 }
 
-void Socket::sendMessage(MessagePtr message)
+void ARCUS_EXPORT Socket::sendMessage(MessagePtr message)
 {
     if(!message)
         return;
